@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Quizzer</string>
+    <string name="question_text">This is a true or false question</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="correct_toast">Congratulations! That is the correct toast.</string>
+    <string name="incorrect_toast">Sorry, that is not correct</string>
+</resources>
