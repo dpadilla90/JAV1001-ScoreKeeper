@@ -89,7 +89,7 @@
             android:textColor="@color/white"/>
 
         <RadioButton
-            android:id="@+id/option2RadioButton"
+            android:id="@+id/option3RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option3"
