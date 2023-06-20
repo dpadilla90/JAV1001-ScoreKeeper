@@ -3,6 +3,8 @@ package com.example.scorekeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
+
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -10,14 +12,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var increaseButton2: Button
     private lateinit var decreaseButton1: Button
     private lateinit var decreaseButton2: Button
-    private var score = 0
+    private var score1 = 0
+    private var score2 = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //'R' is a class in Android that contains the definitions for all the recources
+        //'R' is a class in Android that contains the definitions for all the resources
         //of our application. In this. R.id.ture_button -> a button with the id "true_button"
         //that is defined in the layout file(specifically activity_main.xml)
 
@@ -27,19 +30,31 @@ class MainActivity : AppCompatActivity() {
         decreaseButton2 = findViewById(R.id.decrease_button_t2)
 
         increaseButton1.setOnClickListener {
-            score++
+            score1++
             updateScoreTextView()
         }
         decreaseButton1.setOnClickListener {
-            if (score > 0) {
-                score--
+            if (score1> 0) {
+                score1--
+            }
+            updateScoreTextView()
+        }
+        increaseButton2.setOnClickListener {
+            score2++
+            updateScoreTextView()
+        }
+        decreaseButton2.setOnClickListener {
+            if (score2 > 0) {
+                score2--
             }
             updateScoreTextView()
         }
     }
     private fun updateScoreTextView() {
-        val scoreTextView: TextView = findViewById(R.id.scoreTextView)
-        scoreTextView.text = score.toString()
+        val scoreTextView1: TextView = findViewById(R.id.scoreTextView1)
+        scoreTextView1.text = score1.toString()
+        val scoreTextView2: TextView = findViewById(R.id.scoreTextView2)
+        scoreTextView2.text = score2.toString()
     }
 
 }
