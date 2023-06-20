@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <LinearLayout
@@ -26,6 +27,7 @@
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="50sp"
+                style="@style/TextViewCustomFontStyle"
                 android:text="@string/team1" />
 
             <TextView
@@ -36,6 +38,7 @@
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="80sp"
+                style="@style/TextViewCustomFontStyle"
                 android:text="@string/score_team1" />
 
         </LinearLayout>
@@ -49,7 +52,7 @@
             <Button
                 android:textColor="@color/white"
                 android:id="@+id/increase_button_t1"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/TextViewCustomFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/increase_button" />
@@ -57,7 +60,7 @@
             <Button
                 android:textColor="@color/white"
                 android:id="@+id/decrease_button_t1"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/TextViewCustomFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/decrease_button" />
@@ -79,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option1"
+            style="@style/TextViewCustomFontStyle"
             android:textColor="@color/white"/>
 
         <RadioButton
@@ -86,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option2"
+            style="@style/TextViewCustomFontStyle"
             android:textColor="@color/white"/>
 
         <RadioButton
@@ -93,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option3"
+            style="@style/TextViewCustomFontStyle"
             android:textColor="@color/white"/>
 
 
@@ -119,6 +125,7 @@
                 android:padding="24dp"
                 android:text="@string/team2"
                 android:textSize="50sp"
+                style="@style/TextViewCustomFontStyle"
                 android:textColor="@color/black" />
 
             <TextView
@@ -129,6 +136,7 @@
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="80sp"
+                style="@style/TextViewCustomFontStyle"
                 android:text="@string/score_team2" />
 
         </LinearLayout>
@@ -142,7 +150,7 @@
             <Button
                 android:textColor="@color/black"
                 android:id="@+id/increase_button_t2"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/TextViewCustomFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/increase_button" />
@@ -150,7 +158,7 @@
             <Button
                 android:textColor="@color/black"
                 android:id="@+id/decrease_button_t2"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/TextViewCustomFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/decrease_button" />
