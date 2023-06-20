@@ -6,8 +6,12 @@ import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var trueButton: Button
-    private lateinit var falseButton: Button
+    private lateinit var increaseButton1: Button
+    private lateinit var increaseButton2: Button
+    private lateinit var decreaseButton1: Button
+    private lateinit var decreaseButton2: Button
+    private var score = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,24 +21,25 @@ class MainActivity : AppCompatActivity() {
         //of our application. In this. R.id.ture_button -> a button with the id "true_button"
         //that is defined in the layout file(specifically activity_main.xml)
 
-        trueButton = findViewById(R.id.true_button)
-        falseButton = findViewById(R.id.false_button)
+        increaseButton1 = findViewById(R.id.increase_button_t1)
+        increaseButton2 = findViewById(R.id.increase_button_t2)
+        decreaseButton1 = findViewById(R.id.decrease_button_t1)
+        decreaseButton2 = findViewById(R.id.decrease_button_t2)
 
-        trueButton.setOnClickListener {
-            Toast.makeText(
-                this,
-                R.string.correct_toast,
-                Toast.LENGTH_SHORT
-            ).show()
+        increaseButton1.setOnClickListener {
+            score++
+            updateScoreTextView()
         }
-        falseButton.setOnClickListener {
-            Toast.makeText(
-                this,
-                R.string.incorrect_toast,
-                Toast.LENGTH_SHORT
-            ).show()
+        decreaseButton1.setOnClickListener {
+            if (score > 0) {
+                score--
+            }
+            updateScoreTextView()
         }
     }
-
+    private fun updateScoreTextView() {
+        val scoreTextView: TextView = findViewById(R.id.scoreTextView)
+        scoreTextView.text = score.toString()
+    }
 
 }

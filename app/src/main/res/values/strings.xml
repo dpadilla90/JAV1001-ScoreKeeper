@@ -5,4 +5,10 @@
     <string name="false_button">False</string>
     <string name="correct_toast">Congratulations! That is the correct toast.</string>
     <string name="incorrect_toast">Sorry, that is not correct</string>
+    <string name="increase_button">INCREASE SCORE</string>
+    <string name="decrease_button">DECREASE SCORE</string>
+    <string name="team1">TEAM #1</string>
+    <string name="team2">TEAM #2</string>
+    <string name="score_team1">10</string>
+    <string name="score_team2">4</string>
 </resources>
