@@ -3,15 +3,16 @@ package com.example.scorekeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.RadioGroup
 import android.widget.TextView
 
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var increaseButton1: Button
     private lateinit var increaseButton2: Button
     private lateinit var decreaseButton1: Button
     private lateinit var decreaseButton2: Button
+    private lateinit var incrementOptionsRadioGroup: RadioGroup
     private var score1 = 0
     private var score2 = 0
 
@@ -28,9 +29,11 @@ class MainActivity : AppCompatActivity() {
         increaseButton2 = findViewById(R.id.increase_button_t2)
         decreaseButton1 = findViewById(R.id.decrease_button_t1)
         decreaseButton2 = findViewById(R.id.decrease_button_t2)
+        incrementOptionsRadioGroup = findViewById(R.id.incrementOptionsRadioGroup)
+
 
         increaseButton1.setOnClickListener {
-            score1++
+            score1 += getSelectedIncrementValue()
             updateScoreTextView()
         }
         decreaseButton1.setOnClickListener {
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             updateScoreTextView()
         }
         increaseButton2.setOnClickListener {
-            score2++
+            score2 += getSelectedIncrementValue()
             updateScoreTextView()
         }
         decreaseButton2.setOnClickListener {
@@ -55,6 +58,15 @@ class MainActivity : AppCompatActivity() {
         scoreTextView1.text = score1.toString()
         val scoreTextView2: TextView = findViewById(R.id.scoreTextView2)
         scoreTextView2.text = score2.toString()
+    }
+    private fun getSelectedIncrementValue(): Int {
+
+        return when (incrementOptionsRadioGroup.checkedRadioButtonId) {
+            R.id.option1RadioButton -> 1
+            R.id.option2RadioButton -> 2
+            R.id.option3RadioButton -> 2
+            else -> 0
+        }
     }
 
 }
