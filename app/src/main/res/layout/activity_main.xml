@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="350dp"
         android:background="@color/purple"
         android:gravity="center"
         android:orientation="vertical">
@@ -32,7 +32,7 @@
                 android:textColor="@color/white"
                 android:id="@+id/scoreTextView1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="100sp"
@@ -65,11 +65,44 @@
         </LinearLayout>
 
     </LinearLayout>
+    <RadioGroup
+        android:id="@+id/incrementOptionsRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blue2"
+        android:gravity="center"
+        >
+
+        <RadioButton
+            android:id="@+id/option1RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_option1"
+            android:textColor="@color/white"/>
+
+        <RadioButton
+            android:id="@+id/option2RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_option2"
+            android:textColor="@color/white"/>
+
+        <RadioButton
+            android:id="@+id/option2RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_option3"
+            android:textColor="@color/white"/>
+
+
+    </RadioGroup>
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="365dp"
+        android:layout_height="340dp"
         android:background="@color/green"
         android:gravity="center"
         android:orientation="vertical">
@@ -92,7 +125,7 @@
                 android:textColor="@color/black"
                 android:id="@+id/scoreTextView2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="100sp"
