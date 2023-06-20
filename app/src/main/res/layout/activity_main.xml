@@ -35,7 +35,7 @@
                 android:layout_height="150dp"
                 android:gravity="center"
                 android:padding="24dp"
-                android:textSize="100sp"
+                android:textSize="80sp"
                 android:text="@string/score_team1" />
 
         </LinearLayout>
@@ -128,7 +128,7 @@
                 android:layout_height="150dp"
                 android:gravity="center"
                 android:padding="24dp"
-                android:textSize="100sp"
+                android:textSize="80sp"
                 android:text="@string/score_team2" />
 
         </LinearLayout>

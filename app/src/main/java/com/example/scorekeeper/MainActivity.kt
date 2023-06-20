@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         return when (incrementOptionsRadioGroup.checkedRadioButtonId) {
             R.id.option1RadioButton -> 1
             R.id.option2RadioButton -> 2
-            R.id.option3RadioButton -> 2
+            R.id.option3RadioButton -> 3
             else -> 0
         }
     }

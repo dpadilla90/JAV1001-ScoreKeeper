@@ -11,7 +11,7 @@
     <string name="team2">TEAM #2</string>
     <string name="score_team1">10</string>
     <string name="score_team2">4</string>
-    <string name="radio_button_option1">Increase by 1</string>
-    <string name="radio_button_option2">Increase by 2</string>
-    <string name="radio_button_option3">Increase by 3</string>
+    <string name="radio_button_option1">1 Pointer</string>
+    <string name="radio_button_option2">2 Pointer</string>
+    <string name="radio_button_option3">3 Pointer</string>
 </resources>
