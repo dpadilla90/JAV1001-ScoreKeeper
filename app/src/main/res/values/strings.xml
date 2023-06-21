@@ -9,8 +9,8 @@
     <string name="decrease_button">DECREASE SCORE</string>
     <string name="team1">TEAM #1</string>
     <string name="team2">TEAM #2</string>
-    <string name="score_team1">10</string>
-    <string name="score_team2">4</string>
+    <string name="score_team1">0</string>
+    <string name="score_team2">0</string>
     <string name="radio_button_option1">1 Pointer</string>
     <string name="radio_button_option2">2 Pointer</string>
     <string name="radio_button_option3">3 Pointer</string>
