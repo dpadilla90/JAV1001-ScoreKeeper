@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Change the title text programmatically
+        val newTitle = "Scorekeeper App"
+        setTitle(newTitle)
+
         // Initialize UI elements by finding their respective views in the layout
         increaseButton1 = findViewById(R.id.increase_button_t1)
         increaseButton2 = findViewById(R.id.increase_button_t2)
