@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple">#2a044a</color>
-    <color name="blue">#0b2e59</color>
-    <color name="blue2">#0d6759</color>
-    <color name="green">#7ab317</color>
-    <color name="light_green">#a0c55f</color>
-    <color name="gray">#707B7C </color>
-    <color name="black">#17202A</color>
-    <color name="white">#FDFEFE</color>
+    <color name="purple1">#3a3688</color>
+    <color name="purple2">#2c2977</color>
+    <color name="purple3">#3a3688</color>
+    <color name="purple4">#0f0e56</color>
+    <color name="purple5">#000045</color>
+
+    <color name="blue1">#4ed4fb</color>
+    <color name="blue2">#3bc2e8</color>
+    <color name="blue3">#27b0d5</color>
+    <color name="blue4">#149dc2</color>
+    <color name="blue5">#008baf</color>
+
+    <color name="red">#f23e02</color>
+    <color name="white2">#fef5c8</color>
+    <color name="blue6">#00988d</color>
+    <color name="blue7">#2c6b74</color>
+    <color name="blue8">#013750</color>
+
+    <color name="dark_primary">#00796B</color>
+    <color name="light_primary">#B2DFDB</color>
+    <color name="primary">#009688</color>
+    <color name="text_icons">#FFFFFF</color>
+    <color name="accent">#009688</color>
+    <color name="p_text">#212121</color>
+    <color name="sec_text">#757575</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="dark_primary2">#455A64</color>
+    <color name="light_primary2">#CFD8DC</color>
+    <color name="primary2">#607D8B</color>
+    <color name="accent2">#536DFE</color>
+
+
+
+
 </resources>

@@ -2,6 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ScoreKeeper" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/purple1</item>
+        <item name="colorPrimaryDark">@color/purple3</item>
+        <item name="colorAccent">@color/purple5</item>
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

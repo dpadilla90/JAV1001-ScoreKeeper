@@ -2,6 +2,46 @@
 <resources>
     <style name="TextViewCustomFontStyle">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
+        <item name="android:textSize">16sp</item> <!-- Customize the size as needed -->
+        <item name="android:textColor">@color/white2</item>
+        <item name="android:background">@color/blue6</item>
+        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+    </style>
+    <style name="TextViewCustomFontStyle2">
+        <item name="android:fontFamily">@font/gasoekone_regular</item>
+        <item name="android:textSize">16sp</item> <!-- Customize the size as needed -->
+        <item name="android:textColor">@color/white2</item>
+        <item name="android:background">@color/blue8</item>
+        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+    </style>
+    <style name="RadioButtonStyle">
+        <item name="android:fontFamily">@font/gasoekone_regular</item>
+        <item name="android:textSize">16sp</item> <!-- Customize the size as needed -->
+        <item name="android:textColor">@color/white2</item>
+        <item name="android:background">@color/blue7</item>
+        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+    </style>
+    <style name="ButtonCustomStyle">
+        <item name="android:fontFamily">@font/gasoekone_regular</item>
+        <item name="android:textSize">12sp</item> <!-- Customize the size as needed -->
+        <item name="android:textColor">@color/white2</item>
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Define the primary color for the app -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/dark_primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <!-- Customize other attributes as needed -->
+    </style>
+    <style name="AppThemeNight" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/primary2</item>
+        <item name="colorPrimaryDark">@color/dark_primary2</item>
+        <item name="colorAccent">@color/accent2</item>
+        <!-- Customize other attributes for the night mode theme -->
     </style>
 
 </resources>

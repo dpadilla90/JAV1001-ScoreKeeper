@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -9,10 +10,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="@color/purple"
+        android:layout_height="340dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/blue6">
 
 
         <LinearLayout
@@ -21,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:textColor="@color/white"
+                android:textColor="@color/white2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -31,7 +32,7 @@
                 android:text="@string/team1" />
 
             <TextView
-                android:textColor="@color/white"
+                android:textColor="@color/white2"
                 android:id="@+id/scoreTextView1"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -47,23 +48,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            >
 
             <Button
-                android:textColor="@color/white"
                 android:id="@+id/increase_button_t1"
-                style="@style/TextViewCustomFontStyle"
+                style="@style/ButtonCustomStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/increase_button" />
+                android:text="@string/increase_button"
+               />
 
             <Button
-                android:textColor="@color/white"
                 android:id="@+id/decrease_button_t1"
-                style="@style/TextViewCustomFontStyle"
+                style="@style/ButtonCustomStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/decrease_button" />
+                android:text="@string/decrease_button"
+                />
 
         </LinearLayout>
 
@@ -73,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/blue2"
+        android:background="@color/blue7"
         android:gravity="center"
         >
 
@@ -82,24 +84,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option1"
-            style="@style/TextViewCustomFontStyle"
-            android:textColor="@color/white"/>
+            style="@style/RadioButtonStyle"
+            />
 
         <RadioButton
             android:id="@+id/option2RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option2"
-            style="@style/TextViewCustomFontStyle"
-            android:textColor="@color/white"/>
+            style="@style/RadioButtonStyle"/>
 
         <RadioButton
             android:id="@+id/option3RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_option3"
-            style="@style/TextViewCustomFontStyle"
-            android:textColor="@color/white"/>
+            style="@style/RadioButtonStyle"/>
 
 
     </RadioGroup>
@@ -109,9 +109,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="340dp"
-        android:background="@color/green"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/blue8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,18 +125,18 @@
                 android:padding="24dp"
                 android:text="@string/team2"
                 android:textSize="50sp"
-                style="@style/TextViewCustomFontStyle"
-                android:textColor="@color/black" />
+                style="@style/TextViewCustomFontStyle2"
+                android:textColor="@color/white2" />
 
             <TextView
-                android:textColor="@color/black"
+                android:textColor="@color/white2"
                 android:id="@+id/scoreTextView2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:gravity="center"
                 android:padding="24dp"
                 android:textSize="80sp"
-                style="@style/TextViewCustomFontStyle"
+                style="@style/TextViewCustomFontStyle2"
                 android:text="@string/score_team2" />
 
         </LinearLayout>
@@ -145,23 +145,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            >
 
             <Button
-                android:textColor="@color/black"
                 android:id="@+id/increase_button_t2"
-                style="@style/TextViewCustomFontStyle"
+                style="@style/ButtonCustomStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/increase_button" />
+                android:text="@string/increase_button"
+                />
 
             <Button
-                android:textColor="@color/black"
                 android:id="@+id/decrease_button_t2"
-                style="@style/TextViewCustomFontStyle"
+                style="@style/ButtonCustomStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/decrease_button" />
+                android:text="@string/decrease_button"
+                />
 
         </LinearLayout>
 
