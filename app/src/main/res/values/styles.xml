@@ -3,43 +3,43 @@
     <style name="TextViewCustomFontStyle">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">50sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:background">@color/blue6</item>
+        <item name="android:textColor">@color/text_icons</item>
+        <item name="android:background">@color/dark_primary</item>
         <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
     </style>
     <style name="TextViewCustomFontStyle1_2">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">80sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:background">@color/blue6</item>
+        <item name="android:textColor">@color/text_icons</item>
+        <item name="android:background">@color/dark_primary</item>
         <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
     </style>
     <style name="TextViewCustomFontStyle2_1">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">50sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:background">@color/blue8</item>
+        <item name="android:textColor">@color/text_icons</item>
+        <item name="android:background">@color/dark_primary</item>
         <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
     </style>
     <style name="TextViewCustomFontStyle2_2">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">80sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:background">@color/blue8</item>
+        <item name="android:textColor">@color/text_icons</item>
+        <item name="android:background">@color/dark_primary</item>
         <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
     </style>
     <style name="RadioButtonStyle">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
-        <item name="android:textSize">16sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:background">@color/blue7</item>
-        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+        <item name="android:textSize">14sp</item> <!-- Customize the size as needed -->
+        <item name="android:textColor">@color/p_text</item>
+        <item name="android:background">@color/divider</item>
+        <item name="android:padding">14dp</item> <!-- Adjust padding as needed -->
     </style>
     <style name="ButtonCustomStyle">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">12sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/white2</item>
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textColor">@color/p_text</item>
+        <item name="android:backgroundTint">@color/light_primary</item>
         <item name="cornerRadius">20dp</item>
         <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
     </style>
