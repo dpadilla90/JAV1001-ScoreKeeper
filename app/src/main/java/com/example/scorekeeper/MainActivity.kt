@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.scorekeeper.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
     // Declare private properties for UI elements and scores
     private lateinit var binding: ActivityMainBinding
@@ -21,8 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         // Change the title text programmatically
         val newTitle = "Scorekeeper App"
-        supportActionBar?.setTitle(newTitle)
+        supportActionBar?.title = newTitle
 
+        // Check if there is saved state to restore the scores
+        if (savedInstanceState != null) {
+            score1 = savedInstanceState.getInt(KEY_SCORE_1, 0)
+            score2 = savedInstanceState.getInt(KEY_SCORE_2, 0)
+        }
 
         // Set click listeners for buttons to handle score updates
         binding.increaseButtonT1.setOnClickListener {
@@ -52,6 +56,9 @@ class MainActivity : AppCompatActivity() {
             }
             updateScoreTextView()
         }
+
+        // Update the score text views with the current scores
+        updateScoreTextView()
     }
 
     // Update the score text views with the current scores
@@ -69,5 +76,16 @@ class MainActivity : AppCompatActivity() {
             else -> 0
         }
     }
-}
 
+    // Save the scores to the bundle before rotation
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_SCORE_1, score1)
+        outState.putInt(KEY_SCORE_2, score2)
+    }
+
+    companion object {
+        private const val KEY_SCORE_1 = "score1"
+        private const val KEY_SCORE_2 = "score2"
+    }
+}
