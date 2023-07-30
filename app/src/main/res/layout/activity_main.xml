@@ -120,14 +120,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/team2"
-                style="@style/TextViewCustomFontStyle2_1" />
+                style="@style/TextViewCustomFontStyle" />
 
             <TextView
                 android:id="@+id/scoreTextView2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:gravity="center"
-                style="@style/TextViewCustomFontStyle2_2"
+                style="@style/TextViewCustomFontStyle1_2"
                 android:text="@string/score_team2"
                 android:contentDescription="@string/user_score2"
                 />

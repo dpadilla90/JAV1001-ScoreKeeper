@@ -14,20 +14,7 @@
         <item name="android:background">@color/dark_primary</item>
         <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
     </style>
-    <style name="TextViewCustomFontStyle2_1">
-        <item name="android:fontFamily">@font/gasoekone_regular</item>
-        <item name="android:textSize">50sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/text_icons</item>
-        <item name="android:background">@color/dark_primary</item>
-        <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
-    </style>
-    <style name="TextViewCustomFontStyle2_2">
-        <item name="android:fontFamily">@font/gasoekone_regular</item>
-        <item name="android:textSize">80sp</item> <!-- Customize the size as needed -->
-        <item name="android:textColor">@color/text_icons</item>
-        <item name="android:background">@color/dark_primary</item>
-        <item name="android:padding">24dp</item> <!-- Adjust padding as needed -->
-    </style>
+
     <style name="RadioButtonStyle">
         <item name="android:fontFamily">@font/gasoekone_regular</item>
         <item name="android:textSize">14sp</item> <!-- Customize the size as needed -->
