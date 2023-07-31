@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     private var score1 = 0
     private var score2 = 0
     private var saveScores = true
+    // Declare the property for selected radio button ID
+    private var selectedRadioButtonId = R.id.option1RadioButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +36,33 @@ class MainActivity : AppCompatActivity() {
         score1 = sharedPreferences.getInt(KEY_SCORE_1, 0)
         score2 = sharedPreferences.getInt(KEY_SCORE_2, 0)
         saveScores = sharedPreferences.getBoolean(KEY_SAVE_SCORES, true)
+        selectedRadioButtonId = sharedPreferences.getInt(KEY_SELECTED_RADIO_BUTTON, R.id.option1RadioButton)
 
+
+        // Set the selected radio button
+        binding.incrementOptionsRadioGroup.check(selectedRadioButtonId)
+
+        // Set click listeners for radio buttons to handle selection changes
+        binding.option1RadioButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedRadioButtonId = R.id.option1RadioButton
+                saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId)
+            }
+        }
+
+        binding.option2RadioButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedRadioButtonId = R.id.option2RadioButton
+                saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId)
+            }
+        }
+
+        binding.option3RadioButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedRadioButtonId = R.id.option3RadioButton
+                saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId)
+            }
+        }
 
         // Check if there is saved state to restore the scores
         if (savedInstanceState != null) {
@@ -145,10 +174,19 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
+    private fun saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId: Int) {
+        val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(KEY_SELECTED_RADIO_BUTTON, selectedRadioButtonId)
+        editor.apply()
+    }
+
+
     companion object {
         private const val KEY_SCORE_1 = "score1"
         private const val KEY_SCORE_2 = "score2"
         private const val KEY_SAVE_SCORES = "save_scores"
+        private const val KEY_SELECTED_RADIO_BUTTON = "selected_radio_button"
         private const val REQUEST_SETTINGS = 1
     }
 }
