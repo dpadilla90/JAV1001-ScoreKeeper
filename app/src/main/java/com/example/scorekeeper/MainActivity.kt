@@ -1,5 +1,6 @@
 package com.example.scorekeeper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.scorekeeper.databinding.ActivityMainBinding
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var score1 = 0
     private var score2 = 0
+    private var saveScores = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             score1 = savedInstanceState.getInt(KEY_SCORE_1, 0)
             score2 = savedInstanceState.getInt(KEY_SCORE_2, 0)
+            saveScores = savedInstanceState.getBoolean(KEY_SAVE_SCORES, true)
         }
 
         // Set click listeners for buttons to handle score updates
@@ -82,11 +85,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Save the scores to the bundle before rotation
+    // Save the scores and settings to the bundle before rotation
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(KEY_SCORE_1, score1)
         outState.putInt(KEY_SCORE_2, score2)
+        outState.putBoolean(KEY_SAVE_SCORES, saveScores)
     }
 
     // Create the menu and handle menu item clicks
@@ -104,9 +108,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.action_settings -> {
-                // Handle "Settings" action
-                showToast("Settings selected")
-                true
+                // Open SettingsActivity to manage settings
+                openSettingsActivity()
+                return true
             }
 
             else -> super.onOptionsItemSelected(item)
@@ -118,8 +122,17 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
+    // Function to open SettingsActivity
+    private fun openSettingsActivity() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        intent.putExtra(SettingsActivity.EXTRA_SAVE_SCORES, saveScores)
+        startActivityForResult(intent, REQUEST_SETTINGS)
+    }
+
     companion object {
         private const val KEY_SCORE_1 = "score1"
         private const val KEY_SCORE_2 = "score2"
+        private const val KEY_SAVE_SCORES = "save_scores"
+        private const val REQUEST_SETTINGS = 1
     }
 }
