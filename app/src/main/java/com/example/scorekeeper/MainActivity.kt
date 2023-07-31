@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        // Restore scores and settings from SharedPreferences
+        val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
+        score1 = sharedPreferences.getInt(KEY_SCORE_1, 0)
+        score2 = sharedPreferences.getInt(KEY_SCORE_2, 0)
+        saveScores = sharedPreferences.getBoolean(KEY_SAVE_SCORES, true)
+
 
         // Check if there is saved state to restore the scores
         if (savedInstanceState != null) {
@@ -73,6 +79,8 @@ class MainActivity : AppCompatActivity() {
     private fun updateScoreTextView() {
         binding.scoreTextView1.text = score1.toString()
         binding.scoreTextView2.text = score2.toString()
+        // Save scores and settings whenever scores are updated
+        saveScoresToSharedPreferences()
     }
 
     // Get the selected increment value from the radio button group
@@ -127,6 +135,14 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         intent.putExtra(SettingsActivity.EXTRA_SAVE_SCORES, saveScores)
         startActivityForResult(intent, REQUEST_SETTINGS)
+    }
+    private fun saveScoresToSharedPreferences() {
+        val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(KEY_SCORE_1, score1)
+        editor.putInt(KEY_SCORE_2, score2)
+        editor.putBoolean(KEY_SAVE_SCORES, saveScores)
+        editor.apply()
     }
 
     companion object {
