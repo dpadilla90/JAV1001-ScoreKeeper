@@ -3,6 +3,10 @@ package com.example.scorekeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.scorekeeper.databinding.ActivityMainBinding
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
     // Declare private properties for UI elements and scores
@@ -18,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Change the title text programmatically
-        val newTitle = "Scorekeeper App"
-        supportActionBar?.title = newTitle
+        // Set up the custom Toolbar
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
 
         // Check if there is saved state to restore the scores
         if (savedInstanceState != null) {
@@ -82,6 +87,35 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putInt(KEY_SCORE_1, score1)
         outState.putInt(KEY_SCORE_2, score2)
+    }
+
+    // Create the menu and handle menu item clicks
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_about -> {
+                // Show developer information in a Toast
+                showToast(getString(R.string.developer_info))
+                return true
+            }
+
+            R.id.action_settings -> {
+                // Handle "Settings" action
+                showToast("Settings selected")
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    // Helper function to show a toast message
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     companion object {
