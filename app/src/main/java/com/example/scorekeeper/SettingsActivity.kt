@@ -1,5 +1,6 @@
 package com.example.scorekeeper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.scorekeeper.databinding.ActivitySettingsBinding
@@ -11,6 +12,12 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set up the custom Toolbar
+        setSupportActionBar(binding.toolbarSettings)
+
+        // Show the back button in the Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Get the value of saveScores passed from MainActivity
         val saveScores = intent.getBooleanExtra(EXTRA_SAVE_SCORES, true)
@@ -26,6 +33,12 @@ class SettingsActivity : AppCompatActivity() {
             }
             setResult(RESULT_OK, resultIntent)
         }
+    }
+
+    // Handle back button click in the Toolbar
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     companion object {
