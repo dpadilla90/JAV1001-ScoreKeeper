@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         // Set the selected radio button
         binding.incrementOptionsRadioGroup.check(selectedRadioButtonId)
 
+
+
         // Set click listeners for radio buttons to handle selection changes
         binding.option1RadioButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -183,11 +185,19 @@ class MainActivity : AppCompatActivity() {
     private fun saveScoresToSharedPreferences() {
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putInt(KEY_SCORE_1, score1)
-        editor.putInt(KEY_SCORE_2, score2)
         editor.putBoolean(KEY_SAVE_SCORES, saveScores)
+
+
+        // Save scores only when saveScores is true
+        if (saveScores) {
+            editor.putInt(KEY_SCORE_1, score1)
+            editor.putInt(KEY_SCORE_2, score2)
+            editor.putInt(KEY_SELECTED_RADIO_BUTTON, selectedRadioButtonId)
+        }
+
         editor.apply()
     }
+
 
     private fun saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId: Int) {
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
