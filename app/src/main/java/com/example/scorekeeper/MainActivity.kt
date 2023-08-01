@@ -1,5 +1,6 @@
 package com.example.scorekeeper
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -165,6 +166,20 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(SettingsActivity.EXTRA_SAVE_SCORES, saveScores)
         startActivityForResult(intent, REQUEST_SETTINGS)
     }
+
+    // Receive the result from SettingsActivity and handle it
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_SETTINGS && resultCode == Activity.RESULT_OK) {
+            val saveScoresResult = data?.getBooleanExtra(SettingsActivity.EXTRA_SAVE_SCORES, true) ?: true
+            if (saveScores != saveScoresResult) {
+                saveScores = saveScoresResult
+                // Save scores and settings whenever scores are updated
+                saveScoresToSharedPreferences()
+            }
+        }
+    }
+
     private fun saveScoresToSharedPreferences() {
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
