@@ -1,9 +1,10 @@
 package com.example.scorekeeper
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.scorekeeper.databinding.ActivitySettingsBinding
+
+// SettingsActivity is used to manage settings related to saving scores and other preferences
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingsBinding
@@ -42,6 +43,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     companion object {
+        // Constant used as a key to pass data between activities
         const val EXTRA_SAVE_SCORES = "extra_save_scores"
     }
 }

@@ -28,7 +28,7 @@
         <item name="android:textColor">@color/p_text</item>
         <item name="android:backgroundTint">@color/light_primary</item>
         <item name="cornerRadius">20dp</item>
-        <item name="android:padding">8dp</item> <!-- Adjust padding as needed -->
+        <item name="android:padding">12dp</item> <!-- Adjust padding as needed -->
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">

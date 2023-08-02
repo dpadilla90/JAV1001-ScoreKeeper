@@ -40,10 +40,11 @@
             android:textSize="18sp"
             android:gravity="center" />
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/saveScoresSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:checked="true"
             android:text="@string/save_scores_switch" />
     </LinearLayout>

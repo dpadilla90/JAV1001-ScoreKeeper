@@ -8,6 +8,7 @@ import com.example.scorekeeper.databinding.ActivityMainBinding
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,16 @@ class MainActivity : AppCompatActivity() {
     private var saveScores = true
     // Declare the property for selected radio button ID
     private var selectedRadioButtonId = R.id.option1RadioButton
+    private val settingsActivityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val saveScoresResult = result.data?.getBooleanExtra(SettingsActivity.EXTRA_SAVE_SCORES, true) ?: true
+            if (saveScores != saveScoresResult) {
+                saveScores = saveScoresResult
+                // Save scores and settings whenever scores are updated
+                saveScoresToSharedPreferences()
+            }
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Restore scores and settings from SharedPreferences
+        // This is where the scores and settings are retrieved when the app is reopened
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
         score1 = sharedPreferences.getInt(KEY_SCORE_1, 0)
         score2 = sharedPreferences.getInt(KEY_SCORE_2, 0)
@@ -112,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         binding.scoreTextView1.text = score1.toString()
         binding.scoreTextView2.text = score2.toString()
         // Save scores and settings whenever scores are updated
+        // This ensures that the latest scores are always saved in SharedPreferences
         saveScoresToSharedPreferences()
     }
 
@@ -138,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
-
+    // Handle menu item clicks to show toast or open SettingsActivity
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_about -> {
@@ -166,22 +179,12 @@ class MainActivity : AppCompatActivity() {
     private fun openSettingsActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         intent.putExtra(SettingsActivity.EXTRA_SAVE_SCORES, saveScores)
-        startActivityForResult(intent, REQUEST_SETTINGS)
+        settingsActivityResultLauncher.launch(intent)
     }
 
-    // Receive the result from SettingsActivity and handle it
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_SETTINGS && resultCode == Activity.RESULT_OK) {
-            val saveScoresResult = data?.getBooleanExtra(SettingsActivity.EXTRA_SAVE_SCORES, true) ?: true
-            if (saveScores != saveScoresResult) {
-                saveScores = saveScoresResult
-                // Save scores and settings whenever scores are updated
-                saveScoresToSharedPreferences()
-            }
-        }
-    }
 
+
+    //Function to sve scores and other settings to SharedPreferences
     private fun saveScoresToSharedPreferences() {
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -192,13 +195,13 @@ class MainActivity : AppCompatActivity() {
         if (saveScores) {
             editor.putInt(KEY_SCORE_1, score1)
             editor.putInt(KEY_SCORE_2, score2)
-            editor.putInt(KEY_SELECTED_RADIO_BUTTON, selectedRadioButtonId)
         }
 
         editor.apply()
     }
 
-
+    //Function to save the selected radio button to SharedPreferences
+    //This ensures that thr user's choice is remembered when the app is restarted
     private fun saveSelectedRadioButtonToSharedPreferences(selectedRadioButtonId: Int) {
         val sharedPreferences = getSharedPreferences("ScoreKeeperPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -208,10 +211,10 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
+        //Constants used as keys in SharedPreferences
         private const val KEY_SCORE_1 = "score1"
         private const val KEY_SCORE_2 = "score2"
         private const val KEY_SAVE_SCORES = "save_scores"
         private const val KEY_SELECTED_RADIO_BUTTON = "selected_radio_button"
-        private const val REQUEST_SETTINGS = 1
     }
 }
